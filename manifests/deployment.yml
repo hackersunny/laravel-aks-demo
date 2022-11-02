@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: hackersunnylaravelaksdemo 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hackersunnylaravelaksdemo
+  template:
+    metadata:
+      labels:
+        app: hackersunnylaravelaksdemo 
+    spec:
+      containers:
+        - name: hackersunnylaravelaksdemo 
+          image: testglueapp.azurecr.io/hackersunnylaravelaksdemo
+          ports:
+          - containerPort: 80
